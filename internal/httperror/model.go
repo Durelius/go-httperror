@@ -14,11 +14,6 @@ func (err *HttpError) Error() string {
 	return err.InternalError.Error()
 }
 
-// Implements the pubinterr interface
-func (err *HttpError) Public() string {
-	return err.PublicError
-}
-
 // New creates a new HttpError, setting the internal error to the public error if
 // err param is nil
 func New(err error, message string) *HttpError {

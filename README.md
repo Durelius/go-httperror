@@ -54,7 +54,6 @@ httperror.NewStr("email is required")
 
 ## Interfaces
 
-`HttpError` implements two interfaces:
+`HttpError` implements the error interface:
 
 - `error` — via `Error() string`, returns the internal error message
-- `pubinterr` — via `Public() string`, returns the public message
