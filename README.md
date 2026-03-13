@@ -17,6 +17,10 @@ log.Println(err.Error())         // original error message
 
 // Send the public message in the response
 json.NewEncoder(w).Encode(err)   // {"errorMessage": "something went wrong"}
+
+// Send the public message in the response through the helper function
+httpErr.WriteJSONError(w, 418)   // HttpStatus: 418 - I'm a teapot {"errorMessage": "something went wrong"}
+httpErr.WriteJSONError(w)        // HttpStatus: 400 - Bad request {"errorMessage": "something went wrong"}
 ```
 
 ## Constructors
